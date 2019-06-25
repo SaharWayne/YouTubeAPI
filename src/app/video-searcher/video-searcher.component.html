@@ -1,0 +1,20 @@
+<div class="div-3">
+  <div class="w-form">
+    <form #f="ngForm" (ngSubmit)="onSearchSubmit(f)" novalidate>
+      <input class="text-input w-input" type="text" name="term" placeholder="What are you looking for?" ngModel>
+      <select style="display: none;" name="source" size="1" multiple [(ngModel)]="selectedSource">
+        <option *ngFor="let source of sources" [ngValue]="source.value">{{ source.name }}</option>
+      </select>
+      <input class="submit-1 w-button" type="submit" value="Search">
+    </form>
+  </div>
+  <div *ngIf="videos_data">
+    <div class="div-4" *ngFor="let video of videos_data.items" (click)="onVideoClick(video)">
+      <img [src]="video.snippet.thumbnails.default.url" class="thumbnail">
+      <div class="div-5">
+        <h4 [innerHTML]="video.snippet.title"></h4>
+        <p [innerHTML]="video.snippet.description"></p>
+      </div>
+    </div>
+  </div>
+</div>

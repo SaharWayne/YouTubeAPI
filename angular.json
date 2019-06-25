@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "YoutubeAPI": {
+    "YouTubeAPI": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,11 +13,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/YoutubeAPI",
+            "outputPath": "dist/YouTubeAPI",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
+            "preserveSymlinks": true,
             "aot": false,
             "assets": [
               "src/favicon.ico",
@@ -58,18 +59,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "YoutubeAPI:build"
+            "browserTarget": "YouTubeAPI:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "YoutubeAPI:build:production"
+              "browserTarget": "YouTubeAPI:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "YoutubeAPI:build"
+            "browserTarget": "YouTubeAPI:build"
           }
         },
         "test": {
@@ -106,15 +107,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "YoutubeAPI:serve"
+            "devServerTarget": "YouTubeAPI:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "YoutubeAPI:serve:production"
+              "devServerTarget": "YouTubeAPI:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "YoutubeAPI"
+  "defaultProject": "YouTubeAPI"
 }

@@ -21,7 +21,8 @@
 /* --------------------------------- Divs ------------------------------ */
 .div-1 {
     display: flex;
-    width: 800px;
+    width: 90%;
+    max-width: 800px;
     height: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -44,15 +45,7 @@
     background-color: white;
     font-size: 15px;
 }
-.div-4 {
-    display: flex;
-    height: 120px;
-    margin-bottom: 5px;
-    padding-right: 15px;
-    padding-left: 15px;
-    align-items: center;
-    background-color: rgb(241, 241, 241);
-}
+
 .tab.tab-active {
     align-items: center;
     background-color: white;

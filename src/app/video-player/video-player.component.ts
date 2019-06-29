@@ -25,7 +25,7 @@ export class VideoPlayerComponent implements OnInit {
 
     switch (this.videoSource) {
       case "youtube":
-        url = `https://www.youtube.com/embed/${this.videoId}`;
+        url = `https://www.youtube.com/embed/${this.videoId}?autoplay=1`;
         break;
       default:
         url = null;

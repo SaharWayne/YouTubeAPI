@@ -38,3 +38,17 @@
     height: 90px;
     cursor: pointer;
 }
+
+@media (max-width: 479px) {
+    .div-4 {
+        height: 100%;
+        padding-top: 15px;
+        margin-bottom: 10px;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .div-5 {
+        height: 100%;
+        max-height: 200px;
+    }
+}

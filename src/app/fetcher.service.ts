@@ -7,6 +7,7 @@ import { Observable } from "rxjs/Observable";
 })
 export class FetcherService {
 
+  // All these keys are public, for client-side use
   apis_data = {
     youtube: {
       searchUrl: 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=${term}&key=${key}',

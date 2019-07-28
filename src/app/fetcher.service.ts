@@ -8,9 +8,9 @@ import { Observable } from "rxjs/Observable";
 export class FetcherService {
 
   apis_data = {
-    "youtube": {
-      "searchUrl": "https://www.googleapis.com/youtube/v3/search?part=snippet&q=${term}&key=${key}",
-      "apiKey": "AIzaSyB5i0MjWgmUgpdvjpXRly7qE1BUGwfoDyQ"
+    youtube: {
+      searchUrl: 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=${term}&key=${key}',
+      apiKey: 'AIzaSyB5i0MjWgmUgpdvjpXRly7qE1BUGwfoDyQ'
     }
   }
 
@@ -22,11 +22,11 @@ export class FetcherService {
   }
 
   getApiRequestUrl(term: string, source: string) {
-    var url: string;
+    let url: string;
 
     if (source in this.apis_data) {
       const api_data = this.apis_data[source];
-      url = api_data.searchUrl.replace("${term}", term).replace("${key}", api_data.apiKey);
+      url = api_data.searchUrl.replace('${term}', term).replace('${key}', api_data.apiKey);
     } else {
        url = null;
     }

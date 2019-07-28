@@ -13,10 +13,10 @@ import { ApplicationRef, ComponentFactoryResolver, EmbeddedViewRef, Injector } f
 export class VideoDirectComponent implements OnInit {
 
   private sources_regex: Object = {
-    "youtube": {
-      "pattern": /^https:\/\/?(www\.)?((youtube\.com\/watch\?v=)|(youtu.be\/))([a-zA-Z0-9\-_])+/,
-      "queries": ["v=", null],
-      "idLength": 11
+    youtube: {
+      pattern: /^https:\/\/?(www\.)?((youtube\.com\/watch\?v=)|(youtu.be\/))([a-zA-Z0-9\-_])+/,
+      queries: ['v=', null],
+      idLength: 11
     }
   }
 
@@ -31,32 +31,32 @@ export class VideoDirectComponent implements OnInit {
       return;
     }
 
-    if ("url" in f.value) {
-      var url = f.value["url"].trim();
+    if ('url' in f.value) {
+      let url = f.value['url'].trim();
       if (url.length > 0) {
-        f.control["disable"]();
+        f.control['disable']();
 
-        var video: any = {};
+        let video: any = {};
         this.validateUrl(url, video);
 
         if (video.source) {
           this.playVideo(video.id, video.source);
-          f.control["enable"]();
+          f.control['enable']();
         } else {
-          alert("URL Invalid");
+          alert('URL Invalid');
           setTimeout(function() {
-            document.getElementById("url").focus();
+            document.getElementById('url').focus();
           }, 200);
         }
 
-        f.control["enable"]();
+        f.control['enable']();
       }
     }
   }
 
   validateUrl(url: string, video: any) {
     const ref = this.sources_regex;
-    var regex: any, match: any;
+    let regex: any, match: any;
 
     Object.keys(ref).forEach(function (source: any) {
       // console.log(this.sources_regex);
@@ -64,9 +64,9 @@ export class VideoDirectComponent implements OnInit {
       match = url.match(regex);
 
       if (match) {
-        var id, i1;
-        for (var i = 0; i < ref[source].queries.length; i++) {
-          var query = ref[source].queries[i];
+        let id, i1;
+        for (let i = 0; i < ref[source].queries.length; i++) {
+          let query = ref[source].queries[i];
 
           if (query == null) {
             i1 = url.lastIndexOf('/');

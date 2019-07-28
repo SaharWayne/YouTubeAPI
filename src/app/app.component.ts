@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   title = 'YouTubeAPI';
-  tabsActivity = { 'search': true, 'direct': false }
+  tabsActivity = { search: true, direct: false }
   lastActiveTabKey = 'search';
 
   isTabActive(tabKey: string) {

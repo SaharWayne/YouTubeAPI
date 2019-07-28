@@ -21,10 +21,10 @@ export class VideoPlayerComponent implements OnInit {
   }
 
   buildEmbedUrl() {
-    var url: string;
+    let url: string;
 
     switch (this.videoSource) {
-      case "youtube":
+      case 'youtube':
         url = `https://www.youtube.com/embed/${this.videoId}?autoplay=1`;
         break;
       default:

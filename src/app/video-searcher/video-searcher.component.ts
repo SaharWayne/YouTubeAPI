@@ -15,7 +15,7 @@ export class VideoSearcherComponent implements OnInit {
 
   
   private sources = [
-    { name: "YouTube", value: "youtube" },
+    { name: 'YouTube', value: 'youtube' },
   ];
   private selectedSource = this.sources[0].value;
   private videos_data: any;
@@ -31,15 +31,15 @@ export class VideoSearcherComponent implements OnInit {
       return;
     }
 
-    if ("term" in f.value ) {
-      var term = f.value["term"];
+    if ('term' in f.value ) {
+      let term = f.value['term'];
 
       if (term.length > 0) {
-        f.control["disable"]();
+        f.control['disable']();
 
         this.fetcherService.getVideos(term, this.selectedSource).subscribe(data => {
           this.videos_data = data;
-          f.control["enable"]();
+          f.control['enable']();
         });
 
       }
